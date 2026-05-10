@@ -15,7 +15,7 @@
 
 ```
 Place project folder at any location, e.g.:
-  C:\Users\YourName\Desktop\Herramientas\tAmagochI\
+  C:\Users\YourName\Desktop\Desktop-AI-Lifeform\
 ```
 
 ---
@@ -107,7 +107,7 @@ LLM_ENABLED = True
 
 ### Terminal (recommended for first run):
 ```powershell
-cd C:\path\to\tAmagochI
+cd C:\path\to\project
 .venv\Scripts\activate
 python -m backend.main
 ```
