@@ -11,6 +11,8 @@ ENV/
 # Data & Database
 data/lifeform.db
 data/lifeform.db-journal
+data/lifeform.db-wal
+data/lifeform.db-shm
 
 # Godot
 .godot/
