@@ -1,0 +1,217 @@
+[gd_scene load_steps=11 format=3 uid="uid://cjt0yrptwsuhb"]
+
+[ext_resource type="Script" uid="uid://bl2x074hp3trk" path="res://scenes/main.gd" id="1_main"]
+[ext_resource type="PackedScene" uid="uid://ch5dbukt3b3xa" path="res://scenes/creature/creature.tscn" id="2_creature"]
+[ext_resource type="Script" uid="uid://bvfql2ojy44mc" path="res://scenes/thought_label.gd" id="3_thought"]
+[ext_resource type="Texture2D" uid="uid://de4bajfsx4bm2" path="res://scenes/Background/Background.png" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://bniq4myl27m1u" path="res://scenes/ring_gauge.gd" id="5_ring"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbgi4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tefeu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o6xl0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tipki"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_85g3d"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_main")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_jyhfs")
+expand_mode = 1
+
+[node name="Creature" parent="." instance=ExtResource("2_creature")]
+position = Vector2(154, 420)
+
+[node name="ThoughtLabel" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 199.0
+offset_right = 303.0
+offset_bottom = 238.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("3_thought")
+
+[node name="StatusLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.4)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 8.0
+offset_right = 100.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 12
+text = "state: idle"
+horizontal_alignment = 1
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="StatsPanel" type="VBoxContainer" parent="HUD"]
+modulate = Color(1, 1, 1, 0.6)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -316.0
+offset_top = 171.0
+offset_right = -167.0
+offset_bottom = 262.0
+grow_horizontal = 0
+theme_override_constants/separation = 2
+
+[node name="LabelStress" type="Label" parent="HUD/StatsPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "STRESS"
+label_settings = SubResource("LabelSettings_tbgi4")
+
+[node name="StressBar" type="ProgressBar" parent="HUD/StatsPanel"]
+modulate = Color(1, 0.3, 0.3, 1)
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="LabelFocus" type="Label" parent="HUD/StatsPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "FOCUS"
+label_settings = SubResource("LabelSettings_tefeu")
+
+[node name="FocusBar" type="ProgressBar" parent="HUD/StatsPanel"]
+modulate = Color(0.3, 0.8, 1, 1)
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="LabelSocial" type="Label" parent="HUD/StatsPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "SOCIAL"
+label_settings = SubResource("LabelSettings_o6xl0")
+
+[node name="SocialBar" type="ProgressBar" parent="HUD/StatsPanel"]
+modulate = Color(1, 0.5, 0.8, 1)
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="SysVisuals" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="CPU_Ring" type="Control" parent="HUD/SysVisuals"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -305.0
+offset_right = 29.0
+offset_bottom = -263.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_ring")
+ring_color = Color(0.1, 1, 0.5, 0.7)
+
+[node name="Label" type="Label" parent="HUD/SysVisuals/CPU_Ring"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "CPU"
+label_settings = SubResource("LabelSettings_tipki")
+horizontal_alignment = 1
+
+[node name="RAM_Ring" type="Control" parent="HUD/SysVisuals"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -234.0
+offset_right = 31.0
+offset_bottom = -198.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_ring")
+ring_color = Color(1, 0.8, 0, 0.7)
+
+[node name="Label" type="Label" parent="HUD/SysVisuals/RAM_Ring"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -6.0
+offset_right = 15.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "RAM"
+label_settings = SubResource("LabelSettings_85g3d")
+horizontal_alignment = 1
+
+[node name="DebugOverlay" type="Label" parent="."]
+modulate = Color(0.2, 0.8, 1, 0.3)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -24.0
+offset_right = 120.0
+offset_bottom = -4.0
+theme_override_font_sizes/font_size = 10
+text = "alive ✦"

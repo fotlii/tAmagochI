@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "description": "WebSocket message schema for Desktop AI Lifeform",
+  "messages": {
+    "state_update": {
+      "direction": "backend → frontend",
+      "description": "Full creature state snapshot, sent every BROADCAST_INTERVAL_S",
+      "schema": {
+        "type": "state_update",
+        "state": "string (idle|sleeping|curious|focused|stressed|lonely)",
+        "previous_state": "string",
+        "state_duration": "float (seconds in current state)",
+        "idle_seconds": "float",
+        "vars": {
+          "stress": "float 0-1",
+          "curiosity": "float 0-1",
+          "social_energy": "float 0-1",
+          "fatigue": "float 0-1",
+          "focus": "float 0-1",
+          "attachment": "float 0-1"
+        },
+        "ambient_thought": "string or null",
+        "timestamp": "ISO8601 string"
+      }
+    },
+    "stimulus": {
+      "direction": "backend → frontend (optional direct trigger)",
+      "description": "A discrete event that should trigger a reaction animation",
+      "schema": {
+        "type": "stimulus",
+        "event": "string (build_failure|new_app|music|etc.)",
+        "intensity": "float 0-1"
+      }
+    },
+    "thought": {
+      "direction": "backend → frontend",
+      "description": "An LLM-generated ambient phrase to display briefly",
+      "schema": {
+        "type": "thought",
+        "text": "string (short, atmospheric)",
+        "duration_ms": "integer (display duration in ms, default 4000)"
+      }
+    },
+    "ping": {
+      "direction": "frontend → backend",
+      "description": "Keepalive from frontend",
+      "schema": { "type": "ping" }
+    },
+    "pong": {
+      "direction": "backend → frontend",
+      "schema": { "type": "pong" }
+    }
+  }
+}

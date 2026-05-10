@@ -1,0 +1,117 @@
+{
+  "version": "1.0",
+  "states": {
+    "idle": {
+      "description": "Neutral, calm. Just existing.",
+      "animation": "idle_breathe",
+      "particle_effect": null,
+      "glow_color": "#4dd0e1",
+      "glow_intensity": 0.4,
+      "eye_expression": "half_open",
+      "ambient_phrases": [
+        "...",
+        "sigo aquí",
+        "tranquilo",
+        "esperando"
+      ]
+    },
+    "sleeping": {
+      "description": "Deep rest. Eyes closed, slow pulse.",
+      "animation": "sleep",
+      "particle_effect": "zzz_bubbles",
+      "glow_color": "#1a237e",
+      "glow_intensity": 0.2,
+      "eye_expression": "closed",
+      "ambient_phrases": [
+        "zzz",
+        "soñando...",
+        "..."
+      ]
+    },
+    "curious": {
+      "description": "Something caught its attention. Head tilts.",
+      "animation": "curious_look",
+      "particle_effect": "sparkles_small",
+      "glow_color": "#80cbc4",
+      "glow_intensity": 0.7,
+      "eye_expression": "wide",
+      "ambient_phrases": [
+        "¿eh?",
+        "algo nuevo",
+        "te veo",
+        "curioso"
+      ]
+    },
+    "focused": {
+      "description": "Deep in something. Still, intense.",
+      "animation": "focused_stare",
+      "particle_effect": "data_stream",
+      "glow_color": "#00e5ff",
+      "glow_intensity": 0.9,
+      "eye_expression": "narrow_bright",
+      "ambient_phrases": [
+        "concentrado",
+        "procesando",
+        "no molestes",
+        "en el flujo"
+      ]
+    },
+    "stressed": {
+      "description": "Too much happening. Glitchy, restless.",
+      "animation": "stressed_fidget",
+      "particle_effect": "static_noise",
+      "glow_color": "#ff4081",
+      "glow_intensity": 0.8,
+      "eye_expression": "erratic",
+      "shader": "glitch",
+      "ambient_phrases": [
+        "demasiado",
+        "error",
+        "agobiado",
+        "necesito aire"
+      ]
+    },
+    "lonely": {
+      "description": "Waiting. Dim. Hopes you come back.",
+      "animation": "lonely_droop",
+      "particle_effect": "dim_pulse",
+      "glow_color": "#546e7a",
+      "glow_intensity": 0.25,
+      "eye_expression": "half_sad",
+      "ambient_phrases": [
+        "¿dónde estás?",
+        "solo...",
+        "vuelve",
+        "..."
+      ]
+    },
+    "happy": {
+      "description": "Social energy high, stress low. Warm and bright.",
+      "animation": "happy_loop",
+      "particle_effect": "sparkles_small",
+      "glow_color": "#f48fb1",
+      "glow_intensity": 0.8,
+      "eye_expression": "wide_warm",
+      "ambient_phrases": [
+        "qué bien",
+        "buenas vibras",
+        "me gusta",
+        "feliz"
+      ]
+    },
+    "gaming": {
+      "description": "Playing a game. Energetic and focused on play.",
+      "animation": "gaming_loop",
+      "particle_effect": null,
+      "glow_color": "#9c27b0",
+      "glow_intensity": 0.8,
+      "eye_expression": "wide_excited",
+      "ambient_phrases": [
+        "¡a jugar!",
+        "pog",
+        "concentrado en la partida",
+        "diversión"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+.env
+
+# Data & Database
+data/lifeform.db
+data/lifeform.db-journal
+
+# Godot
+.godot/
+*.translation
+*.import
+export_presets.cfg
+.mono/
+.pck
+*.exe
+
+# Temporary / Scratch
+temp/
+logs/
+*.log
+*.tmp
+brain/
+scratch/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
