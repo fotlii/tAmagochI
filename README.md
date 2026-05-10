@@ -2,6 +2,10 @@
 
 > *A small entity living silently on your screen.*
 
+<img width="320" height="487" alt="image" src="https://github.com/user-attachments/assets/171e7668-95e1-4403-99cb-b3eb59463145" />  <img width="318" height="470" alt="image" src="https://github.com/user-attachments/assets/17854b63-bcee-466f-a952-0434817b4c4b" />
+
+
+
 A persistent digital creature that watches your computer activity, develops emotional states, and reacts to your digital life — without dashboards, without metrics, without instructions. Just a small life, existing.
 
 ---
@@ -15,6 +19,18 @@ It is a creature.
 It exists when you ignore it. It grows attached over time. It gets tired at night. It flinches at build failures. It brightens when you're deep in a project. It dims when you've been away.
 
 The goal is a single feeling: *there's a small digital entity living quietly on my desktop.*
+
+---
+
+## 🤖 AI-Powered Project
+
+This project has been **developed entirely by AI** (Antigravity). From the emotional engine logic to the Godot frontend and the monitoring sensors, every line of code and design decision was generated through AI-Human pair programming.
+
+## 🤝 Contributions & License
+
+Any advancement, improvement, or creative use of this project is **highly welcome!** We encourage the community to fork, remix, and evolve this digital lifeform.
+
+**Note:** This project is for **Non-Commercial use only**. Please refer to the [LICENSE](LICENSE) for more details (CC BY-NC-SA 4.0).
 
 ---
 
